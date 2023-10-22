@@ -1,4 +1,4 @@
-const numDice = process.argv[2];
+const numDice = process.argv[1];
 
 if (!numDice || isNaN(numDice) || numDice < 1){
   console.log("Please provide a valid positive number of dide to roll.")

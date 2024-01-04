@@ -1,0 +1,81 @@
+nav {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 50px;
+  border-bottom: thick solid #057782;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background: rgb(163, 208, 219);
+  background: linear-gradient(227deg,
+      rgba(163, 208, 219, 1) 0%,
+      rgba(163, 176, 219, 1) 20%,
+      rgba(163, 173, 219, 1) 34%,
+      rgba(163, 219, 208, 1) 59%,
+      rgba(163, 208, 219, 1) 74%,
+      rgba(163, 208, 219, 1) 100%);
+}
+
+
+main {
+  width: 75%;
+  background-color: #e0f2f5;
+  min-height: 30em;
+  margin: 0 auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+notif {
+  width: 50%;
+  background-color: #d4daad;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1%;
+  border-radius: 5px;
+}
+notif > *{
+  margin: 0.5em;
+}
+
+table {
+  width: 100%;
+  td, th {
+    text-align: center;
+    padding: 0 5px 0 0;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: #057782;
+  color: white;
+}
+
+input {
+  width: 300px;
+  margin: 0.5em;
+}
+
+.errorMsg {
+  text-align: center;
+  color: #b66824;
+  padding: 15px;
+  margin-bottom: 20px;
+}

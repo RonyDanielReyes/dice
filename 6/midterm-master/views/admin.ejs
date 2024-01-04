@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Decision Maker: Admin Page</title>
+  <%- include('partials/_head') %>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+
+  <%- include('partials/_header') %>
+  <notif><a>Poll <b><%=poll.title%> </b>created successfully! Link has been sent to <b><%=poll.creator_email%></b></a>
+  </notif>
+  <main>
+
+    <b id="admin-poll-title"><%=poll.title%></b>
+    <div id="admin-poll-description"><%=poll.description%></div>
+    <a hidden id="admintoken"><%=poll.admin_link%></a>
+    </br>
+    <div>
+      <label >Admin Link:   </label>
+      <input type="text" value="localhost:8080/admin/<%=poll.admin_link%> " id="adminlink" readonly>
+      <button class="btn" onclick="adminCopy()">Copy</button>
+    </div>
+    <div>
+      <label>Voter Link:   </label>
+      <input type="text" value="localhost:8080/vote/<%=poll.voter_link%> " id="voterlink" readonly>
+      <button class="btn" onclick="voterCopy()">Copy</button>
+    </div>
+
+    <!-- <div class = "result_choice_score"> -->
+      <table class="table">
+        <thead>
+          <tr>
+            <% if (choices[0].score) {%>
+              <th scope="col"><b>Ranking</b></th>
+            <% } %>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%const sups = ['st', 'nd', 'rd', 'th', 'th']%>
+          <% for (let index in choices) { %>
+            <tr>
+              <% if (choices[index].score) {%>
+                <td>
+                  <%const rank = Number(index) +1 %>
+                  <b>
+                    <%=rank%><sup><%=sups[index]%></sup>
+                  </b>
+                </td>
+              <% } %>
+              <td>
+                <%=choices[index].value%>
+              </td>
+            <tr>
+          <% } %>
+        </tbody>
+      </table>
+    <div>
+      <button id = "refresh_btn" type="submit"  class="btn">Refresh Results</button>
+      <button id = "close_btn" type="submit"  class="btn" >Close Poll</button>
+    </div>
+    </main>
+</body>
+
+</html>

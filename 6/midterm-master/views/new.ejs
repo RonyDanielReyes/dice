@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Decision Maker: New Poll</title>
+  <%- include('partials/_head') %>
+  <script defer src="/scripts/new.js"></script>
+</head>
+
+<body id ="new-poll">
+
+  <%- include('partials/_header') %>
+
+    <main>
+      <h4>Create a Poll</h4>
+      <form method="POST" action="/new">
+        <div>
+          <label>Owner Email: *</label>
+          <input type="text" name="email" placeholder="Your email" required />
+        </div>
+        <div>
+          <label>Poll Title: *</label>
+          <input type="text" name="title" placeholder="What is the purpose of the poll?" required />
+        </div>
+        <div>
+          <label>Description: </label>
+          <input type="text" name="description" placeholder="Enter an optional description" />
+        </div>
+          Choices (Provide a minimum of 2 and up to 5 choices): <br>
+          <div>
+          <input type="text" name="choice_one" placeholder="Choice 1" required />*<br>
+          <input type="text" name="choice_two" placeholder="Choice 2" required />*<br>
+          <input type="text" name="choice_three" placeholder="Choice 3 (optional)" /><br>
+          <input type="text" name="choice_four" placeholder="Choice 4 (optional)" /><br>
+          <input type="text" name="choice_five" placeholder="Choice 5 (optional)" /><br>
+        </div>
+        <button type="submit" class="btn">Create new poll</button>
+
+      </form>
+    </main>
+</body>
+
+</html>
